@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fresh Tracks</title>
+        <meta name="description" content="Fresh Music Today">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Fresh Tracks</h1>
+            </header>
+            <main>
+                <div>
+                    <h2>Select your genre and discover whats fresh today.</h2>
+                </div>
+
+                <form class="form">
+                    <label for="genres">Choose a genre:</label>
+                    <select name="genres" id="genres">
+                        <option value="Alternative Rock">Alternative Rock</option>
+                        <option value="Ambient">Ambient</option>
+                        <option value="Classical">Classical</option>
+                        <option value="Country">Country</option>
+                        <option value="Dance & EDM">Dance & EDM</option>
+                        <option value="Dancehall">Dancehall</option>
+                        <option value="Deep House">Deep House</option>
+                        <option value="Disco">Disco</option>
+                        <option value="Drum & Bass">Drum & Bass</option>
+                        <option value="Dubstep">Dubstep</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Folk & Singer-Songwriter">Folk & Singer-Songwriter</option>
+                        <option value="Hip Hop & Rap">Hip Hop & Rap</option>
+                        <option value="House">House</option>
+                        <option value="Indie">Indie</option>
+                        <option value="Jazz & Blues">Jazz & Blues</option>
+                        <option value="Latin">Latin</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Piano">Piano</option>
+                        <option value="Pop">Pop</option>
+                        <option value="R&B & Soul">R&B & Soul</option>
+                        <option value="Reggae">Reggae</option>
+                        <option value="Reggaeton">Reggaeton</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Soundtrack">Soundtrack</option>
+                        <option value="Techno">Techno</option>
+                        <option value="Trance">Trance</option>
+                        <option value="Trap">Rock</option>
+                        <option value="Triphop">Trip Hop</option>
+                        <option value="World">World</option>
+                    </select>
+                    <button>Find</button>
+                </form>
+                <div class="results"></div>
+                <div class="error-msg"></div>
+            </main>
+
+            <footer>
+            </footer>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
