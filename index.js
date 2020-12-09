@@ -67,6 +67,17 @@ function getPlayerIframe(randomTrackURL) {
 
 function displayTrack(response) {
     getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
+    $('.more').on('click', function(){
+        console.log(response[Math.floor(Math.random() * response.length)]);
+        getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
+    })
+}
+
+function doMore(response) {
+    $('.more').on('click', function(){
+        console.log(response[Math.floor(Math.random() * response.length)]);
+        getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
+    })
 }
 
 function injectIframe(ombedResponse) {
