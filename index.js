@@ -1,7 +1,7 @@
 'use strict'
 
 
-let clientId = '91f71f725804f4915f4cc95f69fff503';
+let clientId = '5fd371b0c0d2c54f6de733c69c25105b';
 let soundCloudURL = 'https://api.soundcloud.com/tracks/';
 
 function todaysDateFormatted() {
@@ -16,12 +16,11 @@ function getTrack(selectedGenre) {
         'client_id': clientId,
         'genres': selectedGenre,
         'created_at[from]': todaysDateFormatted(),
-        'limit': 10
+        'limit': 100
     };
 
     const queryString = formatQueryParams(params);
     const url = soundCloudURL + '?' + queryString;
-    console.log(url);
 
 $.ajax({
     type : "GET",
@@ -58,7 +57,7 @@ function getPlayerIframe(randomTrackURL) {
             }
             throw new Error(response.statusText)
         })
-        .then(responseJson => injectIframe(responseJson.html))
+        .then(responseJson => injectIframe(responseJson))
         .catch(err => {
             $('#error-msg').text(`Something went wrong: ${err.message}`);
         })
@@ -66,12 +65,24 @@ function getPlayerIframe(randomTrackURL) {
 
 
 function displayTrack(response) {
-    getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
+    $('.results').empty();
+    // We only want to display 10 tracks
+    // The API returns the same 20 songs eveytime so we increase what is returned and pull 10 at random from the response
+    for (let i = 0; i < 10; i++) {
+        getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
+    }
 }
 
-function injectIframe(ombedResponse) {
-    $('.results').empty();
-    $('.results').append(ombedResponse);
+function injectIframe(response) {
+    console.log(response);
+    // console.log(trackTitle);
+
+    $('.results').append(
+        `<div class="track-container">
+            <div class="track-info">${response.title}</div>
+            <div class="sc-iframe">${response.html}</div>
+        </div>`
+    );
 }
 
 
