@@ -67,7 +67,7 @@ function getPlayerIframe(randomTrackURL) {
 function displayTrack(response) {
     $('.results').empty();
     // We only want to display 10 tracks
-    // The API returns the same 20 songs eveytime so we increase what is returned and pull 10 at random from the response
+    // The API returns the same 10 songs eveytime so we increase what is returned and pull 10 at random from the response
     for (let i = 0; i < 10; i++) {
         getPlayerIframe(response[Math.floor(Math.random() * response.length)].permalink_url);
     }
