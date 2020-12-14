@@ -7,7 +7,12 @@ html, body {
     padding: 0px;
     min-width: 100%;
     text-align: center;
-    background-image: url("images/disque-vinyl-fond-noir.jpg");
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ), 
+      url("../images/disque-vinyl-fond-noir.jpg");
     color: #fdc029;
 }
 
@@ -34,7 +39,7 @@ html, body {
 }
 
 .track-info {
-    text-align: start;
+    text-align: center;
     padding-left: 0.7rem;
     padding-bottom: 0.3rem;
     color:#f50;
@@ -52,18 +57,13 @@ button {
     margin-bottom: 0.8rem;
 }
 
-@media all and (max-width: 580px) {
+
+@media all and (min-width: 800px) {
     .track-info {
-        text-align: center;
+        text-align: start;
     }
 }
 
-@media all and (max-width: 490px) {
-    .inputs {
-        display: block;
-    }
-
-    #genres {
-        margin-bottom: 0.8rem;
-    }
+#genres {
+    margin-bottom: 0.8rem;
 }

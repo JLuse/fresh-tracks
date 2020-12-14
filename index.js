@@ -1,7 +1,7 @@
 'use strict'
 
 
-let clientId = '5fd371b0c0d2c54f6de733c69c25105b';
+let clientId = 'a25e51780f7f86af0afa91f241d091f8';
 let soundCloudURL = 'https://api.soundcloud.com/tracks/';
 
 function todaysDateFormatted() {
