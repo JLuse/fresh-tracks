@@ -28,7 +28,7 @@ $.ajax({
     dataType: "json"
     })
     .done(function(response){
-        console.log(response)
+        // console.log(response)
         displayTrack(response);
     })
     .fail(function(jqXHR, textStatus){
@@ -74,7 +74,6 @@ function displayTrack(response) {
 }
 
 function injectIframe(response) {
-    console.log(response);
     // console.log(trackTitle);
 
     $('.results').append(
