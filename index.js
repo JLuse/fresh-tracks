@@ -7,7 +7,7 @@ let soundCloudURL = 'https://api.soundcloud.com/tracks/';
 function todaysDateFormatted() {
     let today = new Date();
 
-    return `${today.getFullYear().toString().padStart(4, '0')}-${(today.getMonth()+1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}+00:00:00`
+    return `${today.getFullYear().toString().padStart(4, '0')}-${(today.getMonth()+1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}+00:00:00`;
 }
 
 
@@ -85,7 +85,6 @@ function injectIframe(response) {
 }
 
 
-
 function watchForm() {
     $('form').submit(e => {
         e.preventDefault();
@@ -95,4 +94,4 @@ function watchForm() {
     })
 }
 
-$(watchForm)
+$(watchForm);

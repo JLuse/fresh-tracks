@@ -36,6 +36,7 @@ html, body {
 .track-container {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    box-sizing: border-box;
 }
 
 .track-info {
