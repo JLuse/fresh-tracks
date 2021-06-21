@@ -1,4 +1,16 @@
 'use strict'
+import * as Sentry from "@sentry/browser";
+import { Integrations } from "@sentry/tracing";
+
+Sentry.init({
+  dsn: "https://c2da7632cb7944a2a448948df663e3d2@o565143.ingest.sentry.io/5706408",
+  integrations: [new Integrations.BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
 
 
 let clientId = 'a25e51780f7f86af0afa91f241d091f8';
@@ -8,6 +20,7 @@ function todaysDateFormatted() {
     let today = new Date();
 
     return `${today.getFullYear().toString().padStart(4, '0')}-${(today.getMonth()+1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}+00:00:00`;
+    // because less than 2 characters means 1 character... and everything under 10 (1 to 9) is 1 character, so we'll have 01, 02, ..., 09
 }
 
 
