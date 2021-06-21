@@ -1,4 +1,3 @@
-'use strict'
 import * as Sentry from "./node_modules/@sentry/browser";
 import { Integrations } from "./node_modules/@sentry/tracing";
 
