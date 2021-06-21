@@ -1,5 +1,5 @@
-import * as Sentry from "./node_modules/@sentry/browser";
-import { Integrations } from "./node_modules/@sentry/tracing";
+const Sentry = require("./node_modules/@sentry/browser");
+const Integrations = require("./node_modules/@sentry/tracing");
 
 Sentry.init({
   dsn: "https://c2da7632cb7944a2a448948df663e3d2@o565143.ingest.sentry.io/5706408",
