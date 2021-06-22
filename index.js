@@ -1,13 +1,12 @@
-import * as Sentry from "./node_modules/@sentry/browser";
-import { Integrations } from "./node_modules/@sentry/tracing";
 
 Sentry.init({
   dsn: "https://c2da7632cb7944a2a448948df663e3d2@o565143.ingest.sentry.io/5706408",
-  integrations: [new Integrations.BrowserTracing()],
+  // this assumes your build process sets "npm_package_version" in the env
+  release: "fresh-beats@" + process.env.npm_package_version,
+  integrations: [new Sentry.Integrations.BrowserTracing()],
 
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
   tracesSampleRate: 1.0,
 });
 console.log('SENTRY')
